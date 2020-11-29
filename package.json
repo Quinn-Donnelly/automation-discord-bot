@@ -1,0 +1,19 @@
+{
+  "name": "automation-dicord-bot",
+  "version": "1.0.0",
+  "description": "Discord bot for automating things",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Quinn-Donnelly/automation-discord-bot.git"
+  },
+  "author": "Quinn-Donnelly",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Quinn-Donnelly/automation-discord-bot/issues"
+  },
+  "homepage": "https://github.com/Quinn-Donnelly/automation-discord-bot#readme"
+}
