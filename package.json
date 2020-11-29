@@ -2,9 +2,11 @@
   "name": "automation-dicord-bot",
   "version": "1.0.0",
   "description": "Discord bot for automating things",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm run build:live",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:live": "nodemon --watch 'src/**/*.ts' --exec \\\"ts-node\\\" src/index.ts"
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,15 @@
   "bugs": {
     "url": "https://github.com/Quinn-Donnelly/automation-discord-bot/issues"
   },
-  "homepage": "https://github.com/Quinn-Donnelly/automation-discord-bot#readme"
+  "homepage": "https://github.com/Quinn-Donnelly/automation-discord-bot#readme",
+  "dependencies": {
+    "@types/node": "^14.14.10",
+    "discord.js": "^12.5.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6",
+    "ts-node": "^9.0.0",
+    "tslint": "^5.12.1",
+    "typescript": "^3.3.3"
+  }
 }
