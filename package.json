@@ -6,6 +6,7 @@
   "scripts": {
     "start": "npm run build:live",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
     "build:live": "nodemon --watch 'src/**/*.ts' --exec \\\"ts-node\\\" src/index.ts"
   },
   "repository": {
@@ -19,13 +20,17 @@
   },
   "homepage": "https://github.com/Quinn-Donnelly/automation-discord-bot#readme",
   "dependencies": {
-    "@types/node": "^14.14.10",
+    "@types/ws": "^7.4.0",
     "discord.js": "^12.5.1"
   },
   "devDependencies": {
+    "@types/node": "^14.14.10",
     "nodemon": "^2.0.6",
+    "ts-loader": "^8.0.11",
     "ts-node": "^9.0.0",
     "tslint": "^5.12.1",
-    "typescript": "^3.3.3"
+    "typescript": "^3.9.7",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^4.2.0"
   }
 }
