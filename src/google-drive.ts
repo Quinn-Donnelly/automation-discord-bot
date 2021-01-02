@@ -29,9 +29,16 @@ async function runSample() {
     const photoList = await drive.files.list({
       pageSize: 10,
       q: `'${id}' in parents and mimeType contains 'image'`,
-      fields: "nextPageToken, files(id)"
+      fields: "nextPageToken, files(id, createdTime, name)",
+      orderBy: "createdTime"
     });
-    console.log(photoList.data);
+    console.log(photoList.data)
+    const listOfPhotos = photoList.data.files as Array<Object>;
+    const recentPic = listOfPhotos[0] as any;
+    const oldPic = listOfPhotos[listOfPhotos.length - 1] as any;
+
+    console.log(`recent id = ${recentPic.id} name = ${recentPic.name}`);
+    console.log(`old id = ${oldPic.id} name = ${oldPic.name}`);
   } catch (e) {
     console.error("error listing files from google drive", e);
     return null;
