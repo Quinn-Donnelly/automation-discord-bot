@@ -1,7 +1,7 @@
 import {Client, Message} from 'discord.js';
 // @ts-ignore
-import {prefix, envTokenKey} from '../config.json'
-
+import {prefix} from '../config.json'
+import drive from './google-drive';
 
 declare global {
   namespace NodeJS {
@@ -19,19 +19,22 @@ client.once('ready', () => {
   console.log('Ready!');
 });
 
-client.on('message', message => {
+client.on('message', async message => {
   if (message.content.charAt(0) === prefix) {
-    handleCommand(message);
+    await handleCommand(message);
   }
 });
 
-const handleCommand = (message: Message) => {
+const handleCommand = async (message: Message) => {
   const [command, argsList] = removePrefix(message.content).split(" ");
 
   console.log(command);
   switch (command) {
     case "help":
       message.channel.send("Help has not been implemented");
+      break;
+    case "drive":
+      await drive();
       break;
     default:
       message.channel.send("Sorry command not found");

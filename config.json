@@ -1,3 +1,4 @@
 {
-  "prefix": ";"
+  "prefix": ";",
+  "tokenPath": "google-token.json"
 }
