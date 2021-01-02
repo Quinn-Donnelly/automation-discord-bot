@@ -28,6 +28,7 @@ client.on('message', message => {
 const handleCommand = (message: Message) => {
   const [command, argsList] = removePrefix(message.content).split(" ");
 
+  console.log(command);
   switch (command) {
     case "help":
       message.channel.send("Help has not been implemented");
@@ -38,7 +39,7 @@ const handleCommand = (message: Message) => {
 }
 
 const removePrefix = (commandMessage: String) => {
-  return commandMessage.substring(prefix.length, commandMessage.length - prefix.length);
+  return commandMessage.substring(prefix.length, commandMessage.length);
 }
 
 client.login(DISCORD_TOKEN);
